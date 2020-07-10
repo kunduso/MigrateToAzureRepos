@@ -1,3 +1,4 @@
+![Image](https://skdevops.files.wordpress.com/2020/07/21.-migratingfrombbtoar-image0-1.png)
 ## Motivation
 
 I had a task at hand to migrate all repositories from a particular team in bitbucket to Azure Repos. I knew about the UI based tool that is available to import repositories from AzureDevops but there is a limitation there. Only one repository could be moved at a time. And each time (manually) information has to be provided. If you are interested in knowing more about it please visit my article on that [here](http://skundunotes.com/2020/07/10/migrating-a-repository-from-bitbucket-to-azure-repos-ui-based/).
