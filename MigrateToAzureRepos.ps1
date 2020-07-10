@@ -66,6 +66,7 @@ function PushCodeFromLocalToEmptyAzureRepo ($ParentFolder, $LocalProjectPath)
 function CreateEmptyAzureRepo ($RepoName)
 {   
     $CreateRepoFlag = "True"
+    #https://docs.microsoft.com/en-us/cli/azure/ext/azure-devops/repos?view=azure-cli-latest#ext-azure-devops-az-repos-list
     #https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7
      $ListofAzureRepos = cmd /c "az repos list --org $AzureDevopsOrgURL -p $AzureDevopsTeamName" | ConvertFrom-Json
     foreach ($AzureRepos in $ListofAzureRepos)
@@ -79,6 +80,7 @@ function CreateEmptyAzureRepo ($RepoName)
     if ($CreateRepoFlag -eq "True")
     {
         "`nCreating a repo in AzureDevops with name: "+$RepoName
+        #https://docs.microsoft.com/en-us/cli/azure/ext/azure-devops/repos?view=azure-cli-latest#ext-azure-devops-az-repos-create
         cmd /c "az repos create --name "$RepoName" --org "$AzureDevopsOrgURL" -p $AzureDevopsTeamName"
     }
 }
