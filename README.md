@@ -1,10 +1,10 @@
-##Motivation
+## Motivation
 
 I had a task at hand to migrate all repositories from a particular team in bitbucket to Azure Repos. I knew about the UI based tool that is available to import repositories from AzureDevops but there is a limitation there. Only one repository could be moved at a time. And each time (manually) information has to be provided. If you are interested in knowing more about it please visit my article on that [here](http://skundunotes.com/2020/07/10/migrating-a-repository-from-bitbucket-to-azure-repos-using-powershell).
 
 I had to move more than three dozen bitbuket repositories and that approach did not sound exciting and hence I automated the task.
 
-##Prerequisites
+## Prerequisites
 <br />BitBucketUserName : your bitbucket user name
 <br />BitBucketEmailAlias : email id associated with bitbucket
 <br />BitBucketPassword : bitbucket password
@@ -13,13 +13,13 @@ I had to move more than three dozen bitbuket repositories and that approach did 
 <br />$AzureDevopsOrgURL : similar to https://dev.azure.com/MyOrganizationName/
 <br />AzureDevopsTeamName : project team name in AzureDevops
 
-##Usage
+## Usage
 <br />-Open windows powershell as admin before you run the script
 <br />-Copy/download powershell file and execute below command
 
-.\MigrateToAzureRepos.ps1 -BitBucketUserName "$(YourBitBucketUserName)" -BitBucketEmailAlias "$(YourBitBucketEmailID)" -BitBucketPassword "$(YourBitBucketPassword)" -RootFolderForProjects "$(LocalMachineFolderPath)" -AzureDevopsPAT "$(AzureDevopsPAT)" -AzureDevopsOrgURL "$(AzureDevopsOrgURL)" -AzureDevopsTeamName "$(YourAzureDevopsTeamName)"
+<pre><code>.\MigrateToAzureRepos.ps1 -BitBucketUserName "$(YourBitBucketUserName)" -BitBucketEmailAlias "$(YourBitBucketEmailID)" -BitBucketPassword "$(YourBitBucketPassword)" -RootFolderForProjects "$(LocalMachineFolderPath)" -AzureDevopsPAT "$(AzureDevopsPAT)" -AzureDevopsOrgURL "$(AzureDevopsOrgURL)" -AzureDevopsTeamName "$(YourAzureDevopsTeamName)"</code></pre>
 
-##Algorithm
+## Algorithm
 <br />Create local folder for clone work
 <br />Login to Bitbucket
 <br />Get a list of bitbucket teams
@@ -35,3 +35,6 @@ I had to move more than three dozen bitbuket repositories and that approach did 
 <br />Logout of bitbucket
 <br />Delete local folder
 <br />Delete AzureDevps PAT from environment
+
+## Contribution/Feedback
+<br />Please submit a pull request with as much details as possible
