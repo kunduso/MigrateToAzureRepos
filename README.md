@@ -6,6 +6,7 @@ I had a task at hand to migrate all repositories from a particular team in bitbu
 I had to move more than three dozen bitbuket repositories and that approach did not sound exciting and hence I automated the task. Here is a link to my [note](http://skundunotes.com/2020/07/10/migrating-a-repository-from-bitbucket-to-azure-repos-using-powershell/)
 
 ## Prerequisites
+Install Azure CLI from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 <br />BitBucketUserName : your bitbucket user name
 <br />BitBucketEmailAlias : email id associated with bitbucket
 <br />BitBucketPassword : bitbucket password
@@ -15,13 +16,13 @@ I had to move more than three dozen bitbuket repositories and that approach did 
 <br />AzureDevopsTeamName : project team name in AzureDevops
 
 ## Usage
-<br />-Open windows powershell as admin before you run the script
+-Open windows powershell as admin before you run the script
 <br />-Copy/download powershell file and execute below command
 
 <pre><code>.\MigrateToAzureRepos.ps1 -BitBucketUserName "$(YourBitBucketUserName)" -BitBucketEmailAlias "$(YourBitBucketEmailID)" -BitBucketPassword "$(YourBitBucketPassword)" -RootFolderForProjects "$(LocalMachineFolderPath)" -AzureDevopsPAT "$(AzureDevopsPAT)" -AzureDevopsOrgURL "$(AzureDevopsOrgURL)" -AzureDevopsTeamName "$(YourAzureDevopsTeamName)"</code></pre>
 
 ## Algorithm
-<br />Create local folder for clone work
+Create local folder for clone work
 <br />Login to Bitbucket
 <br />Get a list of bitbucket teams
 <br />For each bitbucket team, get a list of projects associated with that team
@@ -38,4 +39,4 @@ I had to move more than three dozen bitbuket repositories and that approach did 
 <br />Delete AzureDevps PAT from environment
 
 ## Contribution/Feedback
-<br />Please submit a pull request with as much details as possible
+Please submit a pull request with as much details as possible
