@@ -87,7 +87,7 @@ function CreateEmptyAzureRepo ($RepoName)
 
 ###################################################
 #
-# Eecution begins here
+# Operation begins here
 #
 ###################################################
 
