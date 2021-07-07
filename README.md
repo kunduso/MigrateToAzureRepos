@@ -50,7 +50,7 @@ If you get an error like the one below, most probably the powershell module `Atl
 -    + CategoryInfo          : ResourceUnavailable: (Atlassian.Bitbucket:String) [Import-Module], FileNotFoundException
 -    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
 ```
-If you get the error even after installing the module, open a new Administrator Powershell and execute the powershell file `MigrateToAzureRepos.ps1`.
+If you get this error even after installing the module, open a new Administrator Powershell and execute the powershell file `MigrateToAzureRepos.ps1` with appropriate parameters.
 <br /> Apart from that if there are any issues with executing the powershell file, please let me know.
 
 ## Contribution/Feedback
