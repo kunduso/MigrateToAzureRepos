@@ -41,7 +41,7 @@ Create local folder for clone work
 <br />Delete local folder
 <br />Delete AzureDevps PAT from environment
 ## Error
-If you get an error like the one below, the powershell module is not installed. 
+If you get an error like the one below, most probably the powershell module `Atlassian.Bitbucket` was not installed. Install that following the steps mentioned above.
 ```diff
 -import-module : The specified module 'Atlassian.Bitbucket' was not loaded because no valid module file was found in any module directory.
 -At C:\ed\MigrateToAzureRepos\MigrateToAzureRepos.ps1:14 char:1
@@ -50,7 +50,8 @@ If you get an error like the one below, the powershell module is not installed.
 -    + CategoryInfo          : ResourceUnavailable: (Atlassian.Bitbucket:String) [Import-Module], FileNotFoundException
 -    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
 ```
-If you get the error even after installing the module, open a new Administrator Powershell and execute the powershell file.
+If you get the error even after installing the module, open a new Administrator Powershell and execute the powershell file `MigrateToAzureRepos.ps1`.
+<br /> Apart from that if there are any issues with executing the powershell file, please let me know.
 
 ## Contribution/Feedback
 Please submit a pull request with as much details as possible
