@@ -12,7 +12,7 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 # https://www.powershellgallery.com/packages/Atlassian.Bitbucket/0.24.0
 import-module Atlassian.Bitbucket
-
+Set-Item -Path Env:AZURE_DEVOPS_EXT_PAT -Value $AzureDevopsPAT
 # $RootFolderForProjects is where code from bitbucket repos gets cloned to
 #Region CreateRootFolder
 if (Test-Path "$RootFolderForProjects")
@@ -40,7 +40,8 @@ function CreateBitBucketLogin {
         
         "An error occurred: " +$_
         $_.ScriptStackTrace
-        #Remove-BitbucketLogin
+        # Remove the -Confirm flag if running in non interactive mode
+        . Remove-BitbucketLogin -Confirm
         exit 1
     }
 }
@@ -92,7 +93,7 @@ function CreateEmptyAzureRepo ($RepoName)
 ###################################################
 
 "`nCreating bitbucket login`n"
-CreateBitBucketLogin
+. CreateBitBucketLogin
 "`n"
 
 $ListofBitbucketTeams = Get-BitbucketTeam
@@ -125,7 +126,8 @@ foreach ($BitBucketTeam in $ListofBitbucketTeams)
 }
 
 #Region Cleanup
-Remove-BitbucketLogin 
+# Remove the -Confirm flag if running in non interactive mode
+. Remove-BitbucketLogin -Confirm
 Set-Location -Path "$ScriptPath" -PassThru
 if (Test-Path "$RootFolderForProjects")
 {	
