@@ -1,4 +1,4 @@
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/kunduso/MigrateToAzureRepos)
+[Open in Visual Studio Code](https://open.vscode.dev/kunduso/MigrateToAzureRepos)
 ![Image](https://skdevops.files.wordpress.com/2020/07/21.-migratingfrombbtoar-image0-1.png)
 ## Motivation
 
